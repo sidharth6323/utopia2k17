@@ -1,0 +1,378 @@
+/* Empty. Add your own CSS if you like */
+.body
+{
+	font-family: helvetica;
+}
+.back {
+    background: url(../img/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-name: changeback;
+    animation-duration: 25s;
+    //animation-direction: forward;
+    animation-play-state: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes changeback
+{
+	0%{background: url(../img/back.jpg);background-repeat: no-repeat;
+    background-size: cover;}
+	33.33%{background: url(../img/back3.jpg);background-repeat: no-repeat;
+    background-size: cover;}
+	66.66%{background: url(../img/back4.jpg);background-repeat: no-repeat;
+    background-size: cover;}
+	100%{background: url(../img/back.jpg);background-repeat: no-repeat;
+    background-size: cover;}
+}
+.back2 {
+    background-color: #fff;
+}
+.searchbar
+{
+	margin-top:21%;
+	margin-left: 2%;
+	margin-right: 2%;
+	background: #eee;
+	height: 8vh;
+	display: block;
+}
+.daywrapper
+{
+	margin-top: 8%;
+}
+.topbar
+{
+	z-index: 1000;
+	background-color: #fff;
+	background: url(../img/topback.jpg);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    height: 8vh;
+    margin: 0% 0 0% 0;
+    box-shadow: 0.3px 0.3px 10px #777777;
+	
+}
+.topbar h3
+{
+ 	font-family: 'Grand Hotel', cursive;
+    letter-spacing: 2px;
+    margin-top: 4%;
+    font-size: 1.7em;
+    border-bottom: 1.5px solid #000;
+    display: inline-block;
+    padding-bottom: 2%;
+}
+.heading
+{
+	font-family: 'Grand Hotel', cursive;
+    color: #fff;
+    position: absolute;
+    top: -80%;
+    left: 14%;
+    font-size: 5em;
+    letter-spacing: 4px;
+    //text-shadow: 2px 2px 20px #000;
+}
+.headinganim{
+	animation-name: moveup;
+   	animation-duration: 1.3s;
+   	animation-delay: 0.5s;
+   	animation-fill-mode: forwards;
+   	animation-iteration-count: 1;
+}
+.fadeinanim{
+	animation-name: fadein;
+	animation-iteration-count: 1;
+	animation-duration: 0.5s;
+	animation-delay:0.8s;
+	animation-fill-mode: forwards;
+}
+.subhead{
+	position: absolute;
+	top:-83%;
+	left:50%;
+	color: #ffffff;
+	opacity: 0;
+}
+@keyframes fadein
+{
+	from{opacity:0;}
+	to{opacity: 1;}
+}
+@keyframes moveup
+{
+	from{top:-80%;}
+	to{top:-133%;}
+}
+.days
+{
+	min-width:40%;
+	margin:1% 2% 5% 5%;
+}
+.dayinner
+{
+	text-align: center;
+    margin-left: 24%;
+    padding-top: 8%;
+    font-size: 1.3em;
+    display: inline-block;
+    animation-name: fadein;
+	animation-duration: 0.5s;
+	animation-delay:1.2s;
+	opacity: 0;
+	animation-fill-mode: forwards; 
+}
+.day i
+{
+	float: right;
+	margin-top: 8%;
+	margin-right: 5%;
+	animation-name: fadein;
+	animation-duration: 0.5s;
+	animation-delay:1.2s;
+	opacity: 0;
+	animation-fill-mode: forwards;
+}
+.month
+{
+	float: left;
+    height: 107%;
+    width: 31%;
+    //border: 1px solid #bbb;
+    //background: #fff;
+    text-align: center;
+    padding-top: 2%;
+    margin-left: 1%;
+    margin-top: -4%;
+    //box-shadow: 1px 0 6px #ddd;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-delay: 1.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.monthshadow
+{
+	box-shadow: 1px 0 7px #201b1b;
+}
+.month1
+{
+	background-color: #ed8b97;
+	color: #000;
+}
+.month2
+{
+	background-color: #9cd8b5;
+	color:#000;
+}
+.month3
+{
+	background-color: #9ebee2;
+	color: #000;
+}
+.month4
+{
+	background-color: #ffd182;
+	color: #000; 
+}
+.month5
+{
+	background-color: #a95def;
+	color: #000;
+}
+.month6
+{
+	background: #339ebf;
+	color: #000;
+}
+.month7
+{
+	background: #edca61;
+	color: #000;
+}
+.month8
+{
+	background: #f4a1c0;
+	color: #000;
+}
+.month h2
+{
+	font-size: 25px;
+	margin-bottom:4%;
+	margin-top:5%;
+}
+.day {
+	flex-wrap: wrap;
+ 	opacity: 0.7;
+    height: 13vh;
+    margin: 1%;
+    padding: 2%;
+    width:0;
+    box-shadow: 1px 0 5px #777;
+    //background-color: #eeeeee;
+    animation-name: openright;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay:0.4s;
+}
+.day1
+{
+	background-color: #E71D36;
+	color: #fff;
+}
+.day2
+{
+	background-color: #5CAB7D;
+	color: #fff;
+}
+.day3
+{
+	background-color: #4F86C6;
+	color: #fff;
+}
+.day4
+{
+	background-color: #f2a41d;
+	color:#fff;
+}
+.day5
+{
+	background-color: #5800aa;
+	color: #fff;
+}
+.day6
+{
+	background: #004E66;
+	color: #fff;
+}
+.day7
+{
+	background: #cc9b08;
+	color: #fff;
+}
+.day8
+{
+	background: #d1648c;
+	color: #fff;
+}
+@keyframes openright
+{
+	0%{width:0%;}
+	100%{width: 98%}
+}
+.events {
+    margin: 4% 0;
+}
+.event
+{
+	height: 10vh;
+	margin : -3% 5%;
+	box-shadow: 3px 0 6px #000;
+}
+.event i
+{
+	display: inline-block;
+	margin: 5% 5%;
+	font-size: 2.3em;
+}
+.events p
+{
+	font-size: 1.3em;
+	color: #fff;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	top:11%;
+}
+.events span
+{
+	display: inline-block;
+	float: right;
+	position: relative;
+	margin-top: 3%;
+	margin-right: 2%;
+	font-size: 0.9em;
+}
+.events span i
+{
+	float: right;
+	font-size: 1.1em;
+	display: inline-block;
+}
+.homemain {
+    position: relative;
+    margin-top: 100%;
+}
+
+.homebutton {
+    display: block;
+    height: 6vh;
+    margin: 5% 10%;
+    padding: 0.5% 2.5%;
+    text-align: center;
+    color: #fff;
+    box-shadow: 1px 1px 1px 1px rgba(255,255,255,0.5);
+    border-radius: 6px;
+    letter-spacing: 10px;
+}
+
+
+.homebutton img {
+    position: relative;
+    left: -20%;
+    top: 15%;
+}
+.eventswrapper
+{
+	margin-top: 30%;
+}
+.eventday
+{
+	position: fixed;
+    display: block;
+    padding-left: 10%;
+    width: 100%;
+    margin-top: 14%;
+    font-size: 26px;
+    padding: 4% 6%;
+    box-shadow: 1px 0 7px #7f7373;
+    background: #fafafa;
+    margin-bottom: 11%;
+    z-index:100;
+
+}
+.eventday span span
+{
+	font-size: 0.8em;
+	display: inline-block;
+	margin-left: 5%;
+}
+.cultural
+{
+	color: #fff;
+	background: url(../img/cultureb.jpg);
+}
+.tech
+{
+	color: #fff;
+	background: url(../img/techb.jpg);
+}
+.fun
+{
+	color: #fff;
+	background: url(../img/funb.jpg);
+}
+
+.sports
+{
+	color: #fff;
+	background: url(../img/sportsb.jpg);
+}
+.literary
+{
+	color: #fff;
+	background: url(../img/literaryb.jpg);
+}

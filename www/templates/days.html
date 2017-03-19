@@ -1,0 +1,24 @@
+<ion-view title="days" ng-controller="daysCtrl">
+    <div class="topbar">
+        <h3> Utopia '17 </h3>
+    </div>
+    <ion-content class="back2">
+        <div class="wrapper">
+            <div class="searchbar">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search for events">
+                </label>
+            </div>
+            <div class="daywrapper">
+                <div class="days" ng-repeat="(i,j) in days">
+                    <div class="day day{{j}}" ng-click="gotodays({{j}})">
+                        <span class="month month{{j}} monthshadow"><h2>{{i}}</h2> APR </span>
+                        <span class="dayinner">DAY {{j}}</span>
+                        <i class="icon ion-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
