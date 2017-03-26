@@ -376,3 +376,31 @@
 	color: #fff;
 	background: url(../img/literaryb.jpg);
 }
+.eventwrapper
+{
+	padding-top:25%;
+	background: url(../img/culture.jpg);
+	height: 100%;
+	color: #eeeeee;
+}
+
+.eventinfo h4
+{
+	color: #eeeeee;
+	font-size: 1em;
+    display: block;
+    margin: 4% 6% 4% 4%;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 3% 4%; 
+    background: rgba(1,1,1,0.6);
+}
+.eventinfo p
+{
+	display: block; 
+	margin: 6% 6% 4% 4%;
+	font-size: 1.1em;
+}
+.rulewrapper
+{
+	margin-top:11%;
+}

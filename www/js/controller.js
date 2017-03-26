@@ -44,4 +44,13 @@ app.controller("daysCtrl",function($scope,$state){
 	}
 });
 
-app.controller
+app.controller("eventCtrl",function($scope){
+
+	console.log("in event controller");
+	$scope.currentevent = window.localStorage.getItem('currentevent');
+	$scope.eventarray = {
+		"event Name 1":{"venue":"xyz","timings":"2:00pm","contact":["Sid","Nagpal","Shubham","Deora"],"rules":["some shit","soome more shit","extra shit","shit ended"]}
+	}
+	$scope.currentdict = $scope.eventarray[$scope.currentevent];
+	console.log($scope.currentdict);
+})
