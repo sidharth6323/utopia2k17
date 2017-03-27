@@ -6,19 +6,19 @@
     <ion-content class="has-header">
      <div class="eventswrapper">
         <div class="events" ng-repeat="(i,j) in getEvents(currentday)">
-                <div ng-click="gotoevent(i)" class="event cultural" ng-if="j[0]=='cultural'">
+                <div ng-click="gotoevent(i,j[0])" class="event cultural" ng-if="j[0]=='cultural'">
                     <i class="icon ion-ios-people"></i><p>{{i}}</p><span>{{j[1]}}</span>
                 </div>
-                <div ng-click="gotoevent(i)" class="event fun" ng-if="j[0]=='fun'">
+                <div ng-click="gotoevent(i,j[0])" class="event fun" ng-if="j[0]=='fun'">
                     <i class="icon ion-social-snapchat-outline"></i><p>{{i}}</p><span>{{j[1]}}</span>
                 </div>
-                <div ng-click="gotoevent(i)" class="event sports" ng-if="j[0]=='sports'">
+                <div ng-click="gotoevent(i,j[0])" class="event sports" ng-if="j[0]=='sports'">
                     <i class="icon ion-ios-football-outline"></i><p>{{i}}</p><span>{{j[1]}}</span>
                 </div>
-                <div ng-click="gotoevent(i)" class="event literary" ng-if="j[0]=='literary'">
+                <div ng-click="gotoevent(i,j[0])" class="event literary" ng-if="j[0]=='literary'">
                     <i class="icon ion-ios-bookmarks-outline"></i><p>{{i}}</p><span>{{j[1]}}</span>
                 </div>
-                <div ng-click="gotoevent(i)" class="event tech" ng-if="j[0]=='tech'">
+                <div ng-click="gotoevent(i,j[0])" class="event tech" ng-if="j[0]=='tech'">
                     <i class="icon ion-ios-monitor-outline"></i><p>{{i}}</p><span>{{j[1]}}</span>
                 </div>
             </div>

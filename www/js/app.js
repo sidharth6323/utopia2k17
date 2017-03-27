@@ -3,11 +3,22 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app =angular.module('starter', ['ionic']);
+var app =angular.module('starter', ['ionic','ionic.ion.imageCacheFactory']);
 
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform,$ImageCacheFactory) {
   $ionicPlatform.ready(function() {
-    
+    $ImageCacheFactory.Cache(["img/back.jpg"]).then(function(){
+    console.log("done preloading!");
+    });
+    $ImageCacheFactory.Cache(["img/back3.jpg"]).then(function(){
+    console.log("done preloading!");
+    });
+    $ImageCacheFactory.Cache(["img/back4.jpg"]).then(function(){
+    console.log("done preloading!");
+    });
+    setTimeout(function() {
+        navigator.splashscreen.hide();
+    }, 300);
     console.log("cleared");
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

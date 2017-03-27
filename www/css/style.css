@@ -4,27 +4,15 @@
 	font-family: helvetica;
 }
 .back {
-    background: url(../img/back.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation-name: changeback;
-    animation-duration: 25s;
-    //animation-direction: forward;
-    animation-play-state: ease-in;
-    animation-iteration-count: infinite;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
-@keyframes changeback
-{
-	0%{background: url(../img/back.jpg);background-repeat: no-repeat;
-    background-size: cover;}
-	33.33%{background: url(../img/back3.jpg);background-repeat: no-repeat;
-    background-size: cover;}
-	66.66%{background: url(../img/back4.jpg);background-repeat: no-repeat;
-    background-size: cover;}
-	100%{background: url(../img/back.jpg);background-repeat: no-repeat;
-    background-size: cover;}
-}
 .back2 {
     background-color: #fff;
 }
@@ -378,21 +366,19 @@
 }
 .eventwrapper
 {
-	padding-top:25%;
-	background: url(../img/culture.jpg);
+	padding-top:16%;
 	height: 100%;
-	color: #eeeeee;
+	
 }
 
 .eventinfo h4
 {
-	color: #eeeeee;
 	font-size: 1em;
     display: block;
-    margin: 4% 6% 4% 4%;
+    margin: 2% 0% 0% -1%;
     border-bottom: 1px solid #e7e7e7;
-    padding: 3% 4%; 
-    background: rgba(1,1,1,0.6);
+    padding: 3% 7%;
+    box-shadow: 2px 2px 4px #bbb;
 }
 .eventinfo p
 {

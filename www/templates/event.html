@@ -2,7 +2,12 @@
     <div class="topbar">
         <h3> Utopia '17 </h3>
     </div>
-    <div class="eventday"><span> <i class="icon ion-calendar"></i> <span>{{currentevent}}</span></span>
+    <div class="eventday"><span> <i class="icon ion-ios-people" ng-if="currentcategory=='cultural'"></i>
+        <i class="icon ion-social-snapchat-outline" ng-if="currentcategory=='fun'"></i>
+        <i class="icon ion-ios-football-outline" ng-if="currentcategory=='sports'"></i>
+        <i class="icon ion-ios-bookmarks-outline" ng-if="currentcategory=='literary'"></i> 
+        <i class="icon ion-ios-monitor-outline" ng-if="currentcategory=='tech'"></i> 
+        <span>{{currentevent}}</span></span>
     </div>
     <div class="bar bar-header bar-light">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
