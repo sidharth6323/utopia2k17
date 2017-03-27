@@ -54,5 +54,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/event',
             templateUrl: 'templates/event.html'
         })
+        .state('results', {
+            url: '/results',
+            templateUrl: 'templates/results.html'
+        })
       $urlRouterProvider.otherwise('/');
 })

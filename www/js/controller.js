@@ -9,8 +9,9 @@ app.controller("homeCtrl", function($scope, $state) {
         $(".subhead").removeClass("fadeinanim");
         $(".heading").removeClass('headinganim');
     }, 2300);
-    function changeback(){
-    	setTimeout(function() {
+
+    function changeback() {
+        setTimeout(function() {
             $("#back1").fadeOut(1000);
             $("#back2").show();
         }, 2000);
@@ -70,4 +71,25 @@ app.controller("eventCtrl", function($scope) {
     }
     $scope.currentdict = $scope.eventarray[$scope.currentevent];
     console.log($scope.currentcategory);
+});
+
+app.controller("resultsCtrl", function($scope, $http) {
+    console.log("in results controller");
+    $http.get("https://raw.githubusercontent.com/sidharth6323/utopia2k17/master/results.json").then(function(data) {
+        console.log(data.data);
+        $scope.results = data.data;
+    });
+
+
+    $scope.doRefresh = function() {
+        $http.get("https://raw.githubusercontent.com/sidharth6323/utopia2k17/master/results.json").then(function(data) {
+                console.log(data.data);
+                $scope.results = data.data;
+            })
+            .finally(function() {
+                // Stop the ion-refresher from spinning
+                $scope.$broadcast('scroll.refreshComplete');
+            });
+    };
+
 })
