@@ -18,7 +18,7 @@
             <div class="eventinfo">
                 <h4><i class="icon ion-location"></i>  Venue : {{currentdict.venue}}</h4>
                 <h4><i class="icon ion-clock"></i>  Timings : {{currentdict.timings}}</h4>
-                <h4><i class="icon ion-android-phone-portrait"></i>  Contact : <span ng-repeat="i in currentdict.contact">{{i}}, </span></h4>
+                <h4><i class="icon ion-android-phone-portrait"></i>  Co-ordinators : <span ng-repeat="i in currentdict.coordinators">{{i}}<span ng-if='!$last'>,</span> </span></h4>
                 <div class="rulewrapper">
                     <p ng-repeat="i in currentdict.rules"><i class="icon ion-checkmark-round"></i>    {{i}}</p>
                 </div>

@@ -12,11 +12,14 @@
             <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
             </ion-refresher>
             <ion-list>
-                <ion-item>
+                <ion-item ng-hide="error">
                     <span>Event</span><span style="float:right;">Winner</span>
                 </ion-item>
-                <ion-item ng-repeat="(i,j) in results">
+                <ion-item ng-repeat="(i,j) in results" ng-if="results" ng-hide="error">
                     <span>{{i}}</span><span style="float:right;">{{j}}</span>
+                </ion-item>
+                <ion-item ng-show="error">
+                    <span> <i class="icon ion-alert-circled"></i>  Poor or No Internet Connection. Please Connect to the internet.</span>
                 </ion-item>
             </ion-list>
         </div>
