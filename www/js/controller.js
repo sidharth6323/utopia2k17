@@ -784,11 +784,239 @@ app.controller("eventCtrl", function($scope) {
                 "ANY SCRIPT FROM MOVIES OR ANY PART OF IT WILL NOT BE PERMITTED.",
                 "CO-ORDINATORS DECISION WILL BE FINAL."
             ]
+        },
+        "ATHLETICS": {
+            "venue": "xyz",
+            "timings": "4:00pm-6:00pm",
+            "coordinators": ["SHASHANK K", "ASHISH RANJAN", "PRAJWAL DESAI", "SHREEDHAR M"],
+            "rules": [
+                "1 WARNING FOR EACH PARTICIPANT FOR FALSE START. IF MORE THAN ONE WARNING, TEAM WILL BE DISQUALIFIED.",
+                "OBSTRUCTING THE PATH OF OTHER PLAYER ALSO LEADS TO DISQUALIFICATION OF THE TEAM.",
+                "EVENT COORDINATORS HAVE THE RIGHT TO RESTART THE RACE IF IT IS DEEMED NECESSARY.",
+                "TEAMS MUST REGISTER ON TIME.",
+                "100,200M  - 2 PARTICIPANTS PER TEAM",
+                "100,200M  - 1 PARTICIPANT FROM 1ST YEAR IS COMPULSORY FOR ANY ONE RACE.",
+                "RELAY - 4 PARTICIPANTS PER TEAM."
+            ]
+        },
+        "TABLE TENNIS": {
+            "venue": "xyz",
+            "timings": "4:00pm-6:00pm",
+            "coordinators": ["AKSHAY HULEKAL", "ABHISHEK S K", "VEEKSHITA", "SANGAMESH PATIL", "ANUP HEGDE", "BHARATESH BHAT"],
+            "rules": [
+                "SINGLES, DOUBLES AND MIXED DOUBLES",
+                "LEAGUE MATCHES: 11 POINTS*3 SETS (SAME FOR SINGLES, DOUBLES AND MIXED)",
+                "FINALS: 11 POINTS*5 SETS (SAME FOR SINGLES, DOUBLES AND MIXED)",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION WILL BE FINAL.",
+                "RACKETS WILL NOT BE PROVIDED."
+            ]
+        },
+        "VOLLEY BALL (P)": {
+            "venue": "xyz",
+            "timings": "5:45am-8:00am",
+            "coordinators": ["PRAVEEN M", "NAVEEN NAIK", "RAJU", "SANDEEP KUMAR", "CHETAN G S"],
+            "rules": [
+                "6+3 PLAYERS PER TEAM.",
+                "1 PLAYER COMPULSORY FROM 1ST YEAR IN EACH TEAM.",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION WILL BE FINAL."
+            ]
+        },
+        "VOLLEY BALL (F)": {
+            "venue": "xyz",
+            "timings": "4:00pm-6:00pm",
+            "coordinators": ["PRAVEEN M", "NAVEEN NAIK", "RAJU", "SANDEEP KUMAR", "CHETAN G S"],
+            "rules": [
+                "6+3 PLAYERS PER TEAM.",
+                "1 PLAYER COMPULSORY FROM 1ST YEAR IN EACH TEAM.",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION WILL BE FINAL."
+            ]
+        },
+        "THROW BALL": {
+            "venue": "xyz",
+            "timings": "4:00pm-6:00pm",
+            "coordinators": ["NISCHITH", "NAVEEN NAIK", "KAVYA P D", "ANIL KUMAR G", "SHREYA WALI", "CHETAN G S"],
+            "rules": [
+                "7+3 PLAYERS PER TEAM.",
+                "2 PLAYERS COMPULSORY FROM 1ST YEAR IN EACH TEAM.",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION WILL BE FINAL."
+            ]
+        },
+        "SHOTPUT": {
+            "venue": "xyz",
+            "timings": "4:00pm-6:00pm",
+            "coordinators": ["SHIVSHARAN M", "KAVYA P D", " LUCKY", "GAGANDEEP"],
+            "rules": [
+                "UNLIMITED ENTRIES",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION WILL BE FINAL."
+            ]
+        },
+        "TUG OF WAR": {
+            "venue": "xyz",
+            "timings": "4:00pm-6:00pm",
+            "coordinators": ["SUMANTH KUMAR", "RANJITH", "BIDYANSHU", "PRAVEEN M", "GAURAV KUMAR"],
+            "rules": [
+                "8 MEMBERS FROM EACH TEAM.",
+                "2 MEMBERS FROM 1ST YEAR ARE COMPULSORY.",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED."
+            ]
+        },
+        "BADMINTON (P)": {
+            "venue": "xyz",
+            "timings": "5:45am - 8:00am",
+            "coordinators": ["C K KEERTHI", "PRAVEEN M", "CHETAN SM", "SANGAMESH SH", "SATYAM", "SHARVANI"],
+            "rules": [
+                "SINGLES, DOUBLES AND MIXED DOUBLES",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION WILL BE FINAL.",
+                "RACKETS WILL NOT BE PROVIDED."
+            ]
+        },
+        "BADMINTON (F)": {
+            "venue": "xyz",
+            "timings": "5:45am - 8:00am",
+            "coordinators": ["C K KEERTHI", "PRAVEEN M", "CHETAN SM", "SANGAMESH SH", "SATYAM", "SHARVANI"],
+            "rules": [
+                "SINGLES, DOUBLES AND MIXED DOUBLES",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION WILL BE FINAL.",
+                "RACKETS WILL NOT BE PROVIDED."
+            ]
+        },
+        "KHO-KHO (P)": {
+            "venue": "xyz",
+            "timings": "5:45am - 8:00am",
+            "coordinators": ["SANGMESH BHINGI", "AMIT KOMPI", "SANDESH KEGI", "SACHIN PATTAR", "SHREEDHAR MARATHE"],
+            "rules": [
+                "9+3 PLAYERS PER TEAM.",
+                "2 PLAYERS FROM 1ST YEAR ARE COMPULSORY FROM EACH TEAM.",
+                "NO EXCHANGE OF PLAYERS DURING THE MATCH TIME.",
+                "PRELIMS: BOYS: 7 MIN*2 SET.GIRLS: 5 MIN *2 SET.",
+                "FINALS:  BOYS: 7 MIN*2 SET. GIRLS: 5 MIN*2 SET.",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION WILL BE FINAL."
+            ]
+        },
+        "KHO-KHO (F)": {
+            "venue": "xyz",
+            "timings": "5:45am - 8:00am",
+            "coordinators": ["SANGMESH BHINGI", "AMIT KOMPI", "SANDESH KEGI", "SACHIN PATTAR", "SHREEDHAR MARATHE"],
+            "rules": [
+                "9+3 PLAYERS PER TEAM.",
+                "2 PLAYERS FROM 1ST YEAR ARE COMPULSORY FROM EACH TEAM.",
+                "NO EXCHANGE OF PLAYERS DURING THE MATCH TIME.",
+                "PRELIMS: BOYS: 7 MIN*2 SET.GIRLS: 5 MIN *2 SET.",
+                "FINALS:  BOYS: 7 MIN*2 SET. GIRLS: 5 MIN*2 SET.",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION WILL BE FINAL."
+            ]
+        },
+        "CRICKET (P)": {
+            "venue": "xyz",
+            "timings": "8:00am - 3:30pm",
+            "coordinators": ["ASHISH RANJAN", "NISCHITH", "RAJU", "SHUBHAM ANAND", "SHREYA WALI", "SIDDANT", "KAVYA MOHAN", "SHREEDHAR PATIL"],
+            "rules": [
+                "FOR BOYS :",
+                "11+4 PLAYERS FROM EACH TEAM.",
+                "OVER LIMIT: 10 OVERS (2+2+2+2+2)-PRELIMS.12 OVERS (3+3+2+2+2)-FINALS.",
+                "ATLEAST 2 PLAYERS FROM 1ST YEAR ARE COMPULSORY",
+                "POWER PLAY:10 OVERS: FIRST 2 OVERS ONLY 2 FIELDERS OUTSIDE THE 30 YARD CIRCLE.",
+                "BATTING POWER PLAY: 8TH OR 9TH OVER ONLY 3 FIELDERS OUTSIDE THE 30 YARD ",
+                "12 OVERS: FIRST 3 OVERS ONLY 2 FIELDERS OUTSIDE THE 30 YARD CIRCLE.",
+                "BATTING POWER PLAY: 10TH OR 11TH OVER ONLY 3 FIELDERS OUTSIDE THE 30 YARD.",
+                "FOR GIRLS :",
+                "6+2 PLAYERS FROM EACH TEAM.",
+                "ATLEAST 1 PLAYER IS COMPULSORY FROM 1ST YEAR.",
+                "OVER LIMIT: 5 OVERS (2+2+1)-PRELIMS 6 OVERS (2+2+1+1)-FINALS"
+            ]
+        },
+        "CRICKET (F)": {
+            "venue": "xyz",
+            "timings": "8:00am - 11:00pm",
+            "coordinators": ["ASHISH RANJAN", "NISCHITH", "RAJU", "SHUBHAM ANAND", "SHREYA WALI", "SIDDANT", "KAVYA MOHAN", "SHREEDHAR PATIL"],
+            "rules": [
+                "FOR BOYS :",
+                "11+4 PLAYERS FROM EACH TEAM.",
+                "OVER LIMIT: 10 OVERS (2+2+2+2+2)-PRELIMS.12 OVERS (3+3+2+2+2)-FINALS.",
+                "ATLEAST 2 PLAYERS FROM 1ST YEAR ARE COMPULSORY",
+                "POWER PLAY:10 OVERS: FIRST 2 OVERS ONLY 2 FIELDERS OUTSIDE THE 30 YARD CIRCLE.",
+                "BATTING POWER PLAY: 8TH OR 9TH OVER ONLY 3 FIELDERS OUTSIDE THE 30 YARD ",
+                "12 OVERS: FIRST 3 OVERS ONLY 2 FIELDERS OUTSIDE THE 30 YARD CIRCLE.",
+                "BATTING POWER PLAY: 10TH OR 11TH OVER ONLY 3 FIELDERS OUTSIDE THE 30 YARD.",
+                "FOR GIRLS :",
+                "6+2 PLAYERS FROM EACH TEAM.",
+                "ATLEAST 1 PLAYER IS COMPULSORY FROM 1ST YEAR.",
+                "OVER LIMIT: 5 OVERS (2+2+1)-PRELIMS 6 OVERS (2+2+1+1)-FINALS"
+            ]
+        },
+        "MARATHON": {
+            "venue": "xyz",
+            "timings": "5:45am - 8:00am",
+            "coordinators": ["SHREEDHAR MARATHE", "RANJITH", "SAUJANYA NAGPAL", "VIKRAM MANDAL", "PRAJWAL DESAI"],
+            "rules": [
+                "UNLIMITED ENTRIES."
+            ]
+        },
+        "FOOTBALL (P)": {
+            "venue": "xyz",
+            "timings": "5:45am - 8:00am",
+            "coordinators": ["SHREEDHAR MARATHE", "TANMAYE SETHI", "SIDHARTH KUMAR", "PRAJWAL DESAI", "MANJUNATH CHAVHAN", "DEEPAK ULLAGADDI"],
+            "rules": [
+                "6+2 PLAYERS (ROLLING SUBS) PER TEAM.",
+                "PRELIMS: 10 MINS PER HALF.",
+                "FINALS: 15 MINS PER HALF.",
+                "YELLOW CARD LEADS TO 2 MINS SUSPENSION AFTER A WARNING",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "REFEREE DECISION IS FINAL."
+            ]
+        },
+        "FOOTBALL (F)": {
+            "venue": "xyz",
+            "timings": "5:45am - 8:00am",
+            "coordinators": ["SHREEDHAR MARATHE", "TANMAYE SETHI", "SIDHARTH KUMAR", "PRAJWAL DESAI", "MANJUNATH CHAVHAN", "DEEPAK ULLAGADDI"],
+            "rules": [
+                "6+2 PLAYERS (ROLLING SUBS) PER TEAM.",
+                "PRELIMS: 10 MINS PER HALF.",
+                "FINALS: 15 MINS PER HALF.",
+                "YELLOW CARD LEADS TO 2 MINS SUSPENSION AFTER A WARNING",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "REFEREE DECISION IS FINAL."
+            ]
+        },
+        "BASKETBALL (P)": {
+            "venue": "xyz",
+            "timings": "6:00pm - 9:30pm",
+            "coordinators": ["RISHAB NARAYAN", "VIKRAM MANDAL", "LUCKY", "ADARSH KUMAR", "PRAVEEN M"],
+            "rules": [
+                "5+3 PLAYERS PER TEAM.",
+                "PRELIMS: BOYS: 7 MINS PER SET (4 SETS).",
+                "GIRLS: 5 MINS PER SET (4 SETS).",
+                "FINALS: BOYS: 10 MINS PER SET (4 SETS)",
+                "GIRLS: 5 MINS PER SET (4 SETS).",
+                "1 PLAYER COMPULSORY FROM 1ST YEAR.",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION IS FINAL."
+            ]
+        },
+        "BASKETBALL (F)": {
+            "venue": "xyz",
+            "timings": "5:30pm - 7:00pm",
+            "coordinators": ["RISHAB NARAYAN", "VIKRAM MANDAL", "LUCKY", "ADARSH KUMAR", "PRAVEEN M"],
+            "rules": [
+                "5+3 PLAYERS PER TEAM.",
+                "PRELIMS: BOYS: 7 MINS PER SET (4 SETS).",
+                "GIRLS: 5 MINS PER SET (4 SETS).",
+                "FINALS: BOYS: 10 MINS PER SET (4 SETS)",
+                "GIRLS: 5 MINS PER SET (4 SETS).",
+                "1 PLAYER COMPULSORY FROM 1ST YEAR.",
+                "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
+                "UMPIRES DECISION IS FINAL."
+            ]
         }
-
-
-
-
 
     }
     $scope.currentdict = $scope.eventarray[$scope.currentevent];
