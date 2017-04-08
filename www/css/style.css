@@ -1,4 +1,9 @@
 /* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: Grand Hotel;
+    src: url(../img/GrandHotel-Regular.ttf);
+}
+
 .body
 {
 	font-family: helvetica;
@@ -42,7 +47,7 @@ a
     width: 100%;
     top: 0;
     text-align: center;
-    height: 8vh;
+    height: 8%;
     margin: 0% 0 0% 0;
     box-shadow: 0.3px 0.3px 10px #777777;
 	
@@ -111,10 +116,13 @@ a
     padding-top: 8%;
     font-size: 1.3em;
     display: inline-block;
-    animation-name: fadein;
+    opacity: 0;
+}
+.dayinneranim
+{
+	animation-name: fadein;
 	animation-duration: 0.5s;
 	animation-delay:1.2s;
-	opacity: 0;
 	animation-fill-mode: forwards; 
 }
 .day i
@@ -140,10 +148,13 @@ a
     margin-left: 1%;
     margin-top: -4%;
     //box-shadow: 1px 0 6px #ddd;
-    animation-name: fadein;
+    opacity: 0;
+}
+.monthanim
+{
+	animation-name: fadein;
     animation-duration: 0.5s;
     animation-delay: 1.2s;
-    opacity: 0;
     animation-fill-mode: forwards;
 }
 .monthshadow
@@ -205,7 +216,10 @@ a
     width:0;
     box-shadow: 1px 0 5px #777;
     //background-color: #eeeeee;
-    animation-name: openright;
+}
+.dayanim
+{
+	animation-name: openright;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay:0.4s;
@@ -260,7 +274,6 @@ a
 }
 .event
 {
-	height: 10vh;
 	margin : -3% 5%;
 	box-shadow: 3px 0 6px #000;
 }
@@ -277,6 +290,7 @@ a
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
+	margin-bottom: 0px;
 	top:11%;
 }
 .events span
@@ -363,6 +377,10 @@ a
 {
 	margin-top: 30%;
 }
+.eventswrapper1
+{
+	margin-top: 15%;
+}
 .eventday
 {
 	position: fixed;
@@ -440,4 +458,34 @@ a
 .resultwrapper
 {
 	margin-top: 18%;
+}
+.aboutwrapper
+{
+	margin-top: 20%;
+}
+.devimg
+{
+	box-shadow: 3px 3px 10px #ddd;
+	//border: 1px solid #bbb;
+}
+.devdetails
+{
+	display: inline-block;
+	left: 47%;
+	padding-bottom: 2%;
+	position: absolute;
+	top:35%
+}
+.devdetails span
+{
+	font-size: 23px;
+	color: #000;
+}
+.devdetails i
+{
+	display: inline-block;
+	margin-top: 7%;
+	margin-left: 14.5%;
+	font-size: 28px;
+	color:#555;
 }

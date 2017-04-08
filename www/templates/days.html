@@ -7,14 +7,41 @@
             <div class="searchbar">
                 <label class="item item-input">
                     <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" placeholder="Search for events">
+                    <input type="text" ng-model="query" placeholder="Search for events" ng-change="changefunc(query)">
                 </label>
+                <!--<label ng-repeat="i in events | filter:query" ng-show="searchvis">{{i}} , {{eventsdict[i]}}
+                    <br>
+                </label>-->
+                <div class="eventswrapper1">
+                    <div class="events" ng-repeat="i in events | filter:query" ng-if="searchvis">
+                        <div ng-click="gotoevent(i,eventsdict[i][0])" class="event cultural" ng-if="eventsdict[i][0]=='cultural'">
+                            <i class="icon ion-ios-people"></i>
+                            <p>{{i}}</p><span>{{eventsdict[i][1]}}</span>
+                        </div>
+                        <div ng-click="gotoevent(i,eventsdict[i][0])" class="event fun" ng-if="eventsdict[i][0]=='fun'">
+                            <i class="icon ion-social-snapchat-outline"></i>
+                            <p>{{i}}</p><span>{{eventsdict[i][1]}}</span>
+                        </div>
+                        <div ng-click="gotoevent(i,eventsdict[i][0])" class="event sports" ng-if="eventsdict[i][0]=='sports'">
+                            <i class="icon ion-ios-football-outline"></i>
+                            <p>{{i}}</p><span>{{eventsdict[i][1]}}</span>
+                        </div>
+                        <div ng-click="gotoevent(i,eventsdict[i][0])" class="event literary" ng-if="eventsdict[i][0]=='literary'">
+                            <i class="icon ion-ios-bookmarks-outline"></i>
+                            <p>{{i}}</p><span>{{eventsdict[i][1]}}</span>
+                        </div>
+                        <div ng-click="gotoevent(i,eventsdict[i][0])" class="event tech" ng-if="eventsdict[i][0]=='tech'">
+                            <i class="icon ion-ios-monitor-outline"></i>
+                            <p>{{i}}</p><span>{{eventsdict[i][1]}}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="daywrapper">
                 <div class="days" ng-repeat="(i,j) in days">
-                    <div class="day day{{j}}" ng-click="gotodays({{j}})">
-                        <span class="month month{{j}} monthshadow"><h2>{{i}}</h2> APR </span>
-                        <span class="dayinner">DAY {{j}}</span>
+                    <div id="day" class="day day{{j}}" ng-click="gotodays({{j}})">
+                        <span id = "month" class="month month{{j}} monthshadow"><h2>{{i}}</h2> APR </span>
+                        <span id = "dayinner" class="dayinner">DAY {{j}}</span>
                         <i class="icon ion-chevron-right"></i>
                     </div>
                 </div>

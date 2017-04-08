@@ -33,6 +33,9 @@ app.controller("homeCtrl", function($scope, $state) {
     $scope.gotoresults = function() {
         setTimeout(function() { $state.go("results"); }, 500);
     }
+    $scope.gotoabout = function() {
+        setTimeout(function() { $state.go("about"); }, 500);
+    }
     $('.ripple').on('click', function(event) {
         event.preventDefault();
 
@@ -89,15 +92,53 @@ app.controller("eventslistCtrl", function($scope, $state) {
 });
 
 app.controller("daysCtrl", function($scope, $state) {
-
+    $(document).ready(function() {
+        var animplayed=window.localStorage.getItem('animplayed');
+        if (!animplayed) {
+            $(".day").addClass('dayanim');
+            $(".dayinner").addClass('dayinneranim');
+            $(".month").addClass("monthanim");
+            window.localStorage.setItem('animplayed', 1);
+        }
+        else
+        {
+        	$(".day").removeClass('dayanim');
+            $(".dayinner").removeClass('dayinneranim');
+            $(".month").removeClass("monthanim");
+        	$(".dayinner").css("opacity", "1");
+            $(".month").css('opacity', '1');
+            $(".day").css('width', '98%');
+        }
+    });
+    $scope.searchvis = 0;
     $scope.days = { 8: 1, 9: 2, 10: 3, 11: 4, 12: 5, 13: 6, 14: 7, 15: 8 };
+    $scope.eventsdict = { 'ESSAY WRITING': ['literary', '4:00pm'], 'HATE LETTER': ['literary', '4:00pm'], 'THROW BALL (F)': ['sports', '4:00pm'], 'TREASURE HUNT': ['fun', '11:00am'], 'SHORT PUT': ['sports', '4:00pm'], 'MOCK PLACEMENT (2nd)': ['tech', '5:45am'], 'GROUP DISCUSSION': ['tech', '6:00pm'], 'MOCK PLACEMENT (P)': ['tech', '3:30pm'], 'SKETCHING': ['fun', '5:30pm'], 'GREETING CARD': ['fun', '1:30pm'], 'PERCEPTION WRITING': ['literary', '5:00pm'], 'MIME': ['cultural', '8:30pm'], 'KHO-KHO (P)': ['sports', '5:45am'], 'CREATIVE WRITING': ['literary', '5:00pm'], 'ATHLETICS': ['sports', '4:00pm'], 'STAND UP COMEDY': ['cultural', '6:00pm'], 'SOLO ACTING': ['cultural', '6:00pm'], 'FOOTBALL (P)': ['sports', '5:45am'], 'PICK & SPEAK': ['tech', '5:00pm'], 'SINGING (P)': ['cultural', '4:30pm'], 'GENERAL QUIZ (P)': ['tech', '5:00pm'], 'KHO-KHO (F)': ['sports', '5:45am'], 'BADMINTON (F)': ['sports', '5:45am'], 'VOLLEY BALL (P)': ['sports', '5:45am'], 'MAD ADS': ['cultural', '6:30pm'], 'SELL HELL': ['fun', '8:30pm'], 'INSTRUMENTAL': ['cultural', '7:30pm'], 'LOVE LETTER WRITING': ['literary', '4:00pm'], 'RAMP': ['cultural', '8:00pm'], 'TABLE TENNIS': ['sports', '4:00pm'], 'TATOO MAKING': ['fun', '12:30pm'], 'VOLLEY BALL (F)': ['sports', '4:00pm'], 'C PROGRAMMING (P)': ['tech', '5:30pm'], 'CRICKET (F)': ['sports', '8:00am'], 'MOCK PLACEMENT (F)': ['tech', '12:00pm'], 'RANGOLI': ['fun', '10:30am'], 'PAINTING': ['fun', '4:00pm'], 'MOCK ROCK': ['fun', '5:00pm'], 'FACE PAINTING': ['fun', '10:00am'], 'BATHROOM SINGING': ['fun', '5:30pm'], 'HORROR STORY WRITING': ['literary', '5:00pm'], 'BEST OUT OF WASTE': ['fun', '5:00pm'], 'KANNADA QUIZ (P)': ['tech', '5:00pm'], 'FANCY DRESS': ['cultural', '8:30pm'], 'STREET PLAY': ['cultural', '1:00pm'], 'SUPER MINUTE': ['fun', '12:00pm'], 'BASKETBALL (P)': ['sports', '6:00pm'], 'ANTAKSHARI (P)': ['cultural', '3:30pm'], 'FOOTBALL (F)': ['sports', '5:45am'], 'GENERAL QUIZ (F)': ['tech', '12:00pm'], 'DUMB CHARADES': ['fun', '3:00pm'], 'C PROGRAMMING (F)': ['tech', '12:00pm'], 'MARATHON': ['sports', '5:45am'], 'SPELL BEE': ['tech', '5:30pm'], 'BASKETBALL (F)': ['sports', '5:00pm'], 'SUDOKU': ['tech', '6:00pm'], 'KANNADA QUIZ (F)': ['tech', '12:00pm'], 'COOK WITHOUT FIRE': ['fun', '10:00am'], 'BADMINTON (P)': ['sports', '5:45am'], 'SINGING (F)': ['cultural', '6:30pm'], 'COLLAGE': ['fun', '11:30am'], 'THROW BALL (P)': ['sports', '5:45am'], 'DANCE': ['cultural', '5:45am'], 'BRIDAL MAKE-UP': ['fun', '12:30pm'], 'AIR CRASH': ['fun', '5:00pm'], 'ANTAKSHARI (F)': ['cultural', '7:30pm'], 'TECH CHARADES': ['tech', '3:00pm'], 'TUG OF WAR': ['sports', '4:00pm'], 'DOODLE CREATION': ['fun', '2:30pm'], 'RUBICS CUBE': ['tech', '6:00pm'], 'CRICKET (P)': ['sports', '8:00am'] };
+    $scope.events = ["TABLE TENNIS", "LOVE LETTER WRITING", "ESSAY WRITING", "SPELL BEE", "SUDOKU", "RUBICS CUBE", "BASKETBALL (P)", 'HATE LETTER', 'MOCK PLACEMENT (P)', 'GREETING CARD', 'ANTAKSHARI (P)', 'STAND UP COMEDY', 'SOLO ACTING', 'RANGOLI', 'SINGING (P)', 'BADMINTON (P)', 'COLLAGE', 'SELL HELL', 'BRIDAL MAKE-UP', 'TATOO MAKING', 'DOODLE CREATION', 'CRICKET (P)', 'SINGING (F)', 'HORROR STORY WRITING', 'FANCY DRESS', 'PERCEPTION WRITING', 'KHO-KHO (P)', 'CREATIVE WRITING', 'THROW BALL (P)', 'INSTRUMENTAL', 'VOLLEY BALL (P)', 'MIME', 'GROUP DISCUSSION', 'PICK & SPEAK', 'GENERAL QUIZ (P)', 'BADMINTON (F)', 'ANTAKSHARI (F)', 'MAD ADS', 'C PROGRAMMING (P)', 'BEST OUT OF WASTE', 'KANNADA QUIZ (P)', 'FOOTBALL (P)', 'SKETCHING', 'BASKETBALL (F)', 'MOCK ROCK', 'KHO-KHO (F)', 'MOCK PLACEMENT (2nd)', 'BATHROOM SINGING', 'AIR CRASH', 'TECH CHARADES', 'KANNADA QUIZ (F)', 'COOK WITHOUT FIRE', 'THROW BALL (F)', 'TREASURE HUNT', 'DUMB CHARADES', 'VOLLEY BALL (F)', 'RAMP', 'FACE PAINTING', 'SHORT PUT', 'STREET PLAY', 'SUPER MINUTE', 'GENERAL QUIZ (F)', 'CRICKET (F)', 'C PROGRAMMING (F)', 'TUG OF WAR', 'PAINTING', 'MOCK PLACEMENT (F)', 'MARATHON', 'ATHLETICS', 'FOOTBALL (F)', 'DANCE'];
     $scope.gotodays = function(event) {
         console.log(event);
         $scope.currentday = event;
         window.localStorage.setItem('currentday', $scope.currentday);
         $state.go('eventslist');
-
     }
+    $scope.gotoevent = function(event, category) {
+        console.log(event);
+        window.localStorage.setItem('currentevent', event);
+        window.localStorage.setItem('currentcategory', category);
+        $state.go('event');
+    }
+    $scope.changefunc = function(query) {
+        if (query.length === 0) {
+            $scope.searchvis = 0;
+            $scope.$apply();
+        }
+        $scope.searchvis = 1;
+    }
+    $("input").focus(function() {
+        $(".daywrapper").fadeOut(500);
+        $scope.searchvis = 1;
+    });
+
+
 });
 
 app.controller("eventCtrl", function($scope) {
@@ -107,7 +148,7 @@ app.controller("eventCtrl", function($scope) {
     $scope.currentcategory = window.localStorage.getItem('currentcategory');
     $scope.eventarray = {
         "SINGING (P)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "4:30pm-6:00pm",
             "coordinators": ["SHUBHAM ANAND", "ANKUSH MISHRA", "TANUSHREE", "DEEPSHIKA", "PRADEEP M", "VINAY R", "SREE LAKSHMI"],
             "rules": [
@@ -118,7 +159,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "SINGING (F)": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "4:30pm-6:00pm",
             "coordinators": ["SHUBHAM ANAND", "ANKUSH MISHRA", "TANUSHREE", "DEEPSHIKA", "PRADEEP M", "VINAY R", "SREE LAKSHMI"],
             "rules": [
@@ -130,7 +171,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "STREET PLAY": {
-            "venue": "xyz",
+            "venue": "NEAR CSE BLOCK",
             "timings": "1:00pm-3:00pm",
             "coordinators": ["SANKET", "NIRAJ KAUSHIK", "TANMAYE SETHI", "SANGAMESH BHINGI", "SIDHARTH KUMAR", "RIYA SINGH", "NEHA MUNDRA", "SADHANA PATEL", "ABHIGYAN PANDEY", "ABHISHEK SK"],
             "rules": [
@@ -147,7 +188,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "MIME": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "8:30pm-9:30pm",
             "coordinators": ["RANJITH", "ANANYA SINGH", "SHREEDHAR MARATHE", "PRADEEP MADHYASTHA C", "RISHAB NARAYAN MISHRA"],
             "rules": [
@@ -164,7 +205,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "MAD ADS": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "6:30pm-7:30pm",
             "coordinators": ["ABHISHEK S K", "AMIT KOMPI", "SHREEDHAR MARATHE", "BIDYANSHU	 PANDEY", "RISHAB NARAYAN MISHRA"],
             "rules": [
@@ -181,7 +222,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "FANCY DRESS": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "8:30pm-9:30pm",
             "coordinators": ["CHAITRA", "RANJITHA", "KAVYA MOHAN", "JEETENDRA"],
             "rules": [
@@ -193,7 +234,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "ANTAKSHARI (P)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "3:30pm-4:30pm",
             "coordinators": ["ANKUSH MISHRA", "SATYAM KUMAR", "DEEPSHIKHA"],
             "rules": [
@@ -206,7 +247,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "ANTAKSHARI (F)": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "7:30pm-9:30pm",
             "coordinators": ["ANKUSH MISHRA", "SATYAM KUMAR", "DEEPSHIKHA"],
             "rules": [
@@ -219,7 +260,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "RAMP": {
-            "venue": "xyz",
+            "venue": "MECH BLOCK",
             "timings": "8:00pm",
             "coordinators": ["THRUPTHI", "ANUSHRI HV", "ANURAG MISHRA", "RISHABH", "SHREYA WALI", "CHETAN KUMAR GS"],
             "rules": [
@@ -233,7 +274,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "INSTRUMENTAL": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "7:30pm-8:30pm",
             "coordinators": ["ANKUSH MISHRA", "HARISH SHARMA"],
             "rules": [
@@ -245,7 +286,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "STAND UP COMEDY": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "6:00pm-8:00pm",
             "coordinators": ["BIDYANSHU", "VINAY KAMATAGI", "PRAVEEN GOPALI"],
             "rules": [
@@ -257,7 +298,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "SOLO ACTING": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "6:00pm-8:00pm",
             "coordinators": ["PRADEEP MADHYASTHA C", "SHARATH KUMAR R", "RAGAVENDRA", "SUMANTH KUMAR H N", "VINAY KAMATAGI"],
             "rules": [
@@ -270,7 +311,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "DANCE": {
-            "venue": "xyz",
+            "venue": "MECH BLOCK",
             "timings": "2:00pm-5:00pm",
             "coordinators": ["NISHITA PAL", "ANUSHRI HV", "MANJU", "APARNA", "TANMAYE", "SUSHRAVYA", "YASHASWINI", "NIHALI", "AMOGHA BN", "RAGHAVI SATISH", "VINAY K"],
             "rules": [
@@ -283,7 +324,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "DUMB CHARADES": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "3:00pm-4:00pm",
             "coordinators": ["PRADEEP M", "NISCHITH C", "TANUSHREE", "CHETHAN S M", "DEEKSHITA SHETTY", "PRASHANTH M", "VANDANA KUMARI", "SATYAM KUMAR", "SADHANA PATEL"],
             "rules": [
@@ -294,7 +335,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "RANGOLI": {
-            "venue": "xyz",
+            "venue": "MECH BLOCK",
             "timings": "10:30am-11:30am",
             "coordinators": ["RANJITHA", "DEEPIKA H S", "CHAITRA", "PRARTHANA"],
             "rules": [
@@ -306,7 +347,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "COOK WITHOUT FIRE": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "10:00am-11:00am",
             "coordinators": ["DEEPIKA H S", "VIKRAM MANDAL", "AISHWARYA JAIN", "SHAHIDA", "SAUJANYA NAGPAL"],
             "rules": [
@@ -324,7 +365,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "MOCK ROCK": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "07:00pm-08:30am",
             "coordinators": ["BIDYANSHU", "SHREDHAR PATIL", "SANDESH NEGI", "ANKUSH MISHRA"],
             "rules": [
@@ -338,7 +379,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "BEST OUT OF WASTE": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "05:00pm-06:00pm",
             "coordinators": ["SHAHIDA", "AZEEZA AFREEN", "KUMARI SNIGDHA", "AAYUSH KUMAR"],
             "rules": [
@@ -351,7 +392,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "SKETCHING": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "05:30pm-06:30pm",
             "coordinators": ["SANDEEP NAIK", "PRARTHANA H P", "DIVYA LATHA", "VISHAL HEGDE", "RIYA SINGH", "AAYUSH KUMAR"],
             "rules": [
@@ -366,7 +407,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "PAINTING": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "04:00pm-06:00pm",
             "coordinators": ["SNIGDHA SINGH", "ARPITA SANGAN", "VISHAL HEGDE", "AAYUSH KUMAR", "SOUHITYA"],
             "rules": [
@@ -378,7 +419,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "FACE PAINTING": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "10:00am-11:00am",
             "coordinators": ["AFRA ANJUM", "SOUHITYA", "SHRISTI PRIYA", "ANUKRITI SHARMA", "VARSHA CA"],
             "rules": [
@@ -393,7 +434,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "BRIDAL MAKE-UP": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "12:30pm-1:30pm",
             "coordinators": ["ANUKRITI SHARMA", "TANUSHREE", "NEHA MUNDRA", "SHALINI KUMARI"],
             "rules": [
@@ -406,7 +447,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "COLLAGE": {
-            "venue": "xyz",
+            "venue": "MECH BLOCK",
             "timings": "11:30am-12:30pm",
             "coordinators": ["SHUBHAM KANTH", "SUSHMITHA", "AISHWARYA JAIN", "SANJANA", "SHAHIDA"],
             "rules": [
@@ -417,7 +458,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "TATOO MAKING": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "12:30pm-1:30pm",
             "coordinators": ["SOUHITYA", "AAYUSH KUMAR", "SNIGDHA SINGH"],
             "rules": [
@@ -430,7 +471,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "TREASURE HUNT": {
-            "venue": "xyz",
+            "venue": "COLLEGE PREMISES",
             "timings": "11:00am-12:00pm",
             "coordinators": ["SHREEDHAR MARATHE", "SATISH KUMAR", "SANKET", "PRAJWAL DESAI", "NIKHIL KUMAR"],
             "rules": [
@@ -442,7 +483,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "AIR CRASH": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "8:30pm-9:30pm",
             "coordinators": ["ABHIGYAN PANDEY", "SANKET"],
             "rules": [
@@ -454,7 +495,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "SUPER MINUTE": {
-            "venue": "xyz",
+            "venue": "CONTACT CO-ORDINATORS",
             "timings": "12:00pm-1:00pm",
             "coordinators": ["NIKHILA K B", "ASHA R C", "ABHISHEK S K", "AMOGHA B N"],
             "rules": [
@@ -465,7 +506,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "GREETING CARD": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "1:30pm-2:30pm",
             "coordinators": ["YASHASWINI K", "OSHIN SRIVASTAVA", "CHRISTINE", "AISHWARYA JAIN", "SUSHMA GP"],
             "rules": [
@@ -479,7 +520,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "DOODLE CREATION": {
-            "venue": "xyz",
+            "venue": "CONTACT CO-ORDINATORS",
             "timings": "2:30pm-3:30pm",
             "coordinators": ["ANUKRITI SHARMA", "KUMARI SNIGDHA", "SWETHA C P", "VARSHA"],
             "rules": [
@@ -492,7 +533,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "BATHROOM SINGING": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "8:30pm-9:30pm",
             "coordinators": ["DEEPSHIKHA", "VINAY R"],
             "rules": [
@@ -504,7 +545,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "SELL HELL": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "8:30pm-9:30pm",
             "coordinators": ["SANKET", "ABHIGYAN PANDEY", "BIDYANSHU PANDEY", "NEELESH JAISWAL"],
             "rules": [
@@ -516,8 +557,8 @@ app.controller("eventCtrl", function($scope) {
                 "JUDGES DECISION WILL BE FINAL."
             ]
         },
-        "SUDOKO": {
-            "venue": "xyz",
+        "SUDOKU": {
+            "venue": "ADMIN BLOCK",
             "timings": "6:00pm-6:30pm",
             "coordinators": ["RAGHAVENDRA", "VISHWAS N M", "HARISH SHARMA", "HEMASHREE"],
             "rules": [
@@ -528,7 +569,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "RUBICS CUBE": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "6:00pm-6:30pm",
             "coordinators": ["VANDANA KUMARI", "KUSHAL JHA", "ASHWINI", "SIRISHA"],
             "rules": [
@@ -538,7 +579,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "KANNADA QUIZ (P)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "5:00pm-6:00pm",
             "coordinators": ["PRASHANT M", "SHIVRAJ SHETTY", "RAGHAVENDRA", "SUMANTH KUMAR", "PAWANA K", "SHARAT KUMAR", "KRUTHI", "PRARTHANA"],
             "rules": [
@@ -551,7 +592,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "KANNADA QUIZ (F)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "12:00pm-1:00pm",
             "coordinators": ["PRASHANT M", "SHIVRAJ SHETTY", "RAGHAVENDRA", "SUMANTH KUMAR", "PAWANA K", "SHARAT KUMAR", "KRUTHI", "PRARTHANA"],
             "rules": [
@@ -564,7 +605,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "GROUP DISCUSSION": {
-            "venue": "xyz",
+            "venue": "MAIN STAGE",
             "timings": "6:00pm-7:00pm",
             "coordinators": ["SANGAMESH B BHINGI", "SHREESHA G K", "SUMANTH KUMAR", "K NIKHIL KUMAR", "ADARSH KUMAR", "SANKET"],
             "rules": [
@@ -578,7 +619,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "PICK & SPEAK": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "5:00pm-6:00pm",
             "coordinators": ["RAGHAVENDRA", "SANDEEP NAIK", "SHREESHA", "RISHAB NARAYAN", "SANKET", "DEEPSHIKA SHARMA", "DIKSHA KUMARI", "HARSH DEORA"],
             "rules": [
@@ -589,7 +630,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "GENERAL QUIZ (P)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "5:00pm-6:00pm",
             "coordinators": ["ABHIGYAN PANDEY", "NIRAJ KAUSHIK", "VENUGOPAL", "SUSHMITA", "SHREESHA G K", "ADARSH KUMAR", "SAHANA HEGDE", "PRASHANTH M"],
             "rules": [
@@ -601,7 +642,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "GENERAL QUIZ (F)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "12:00pm-1:00pm",
             "coordinators": ["ABHIGYAN PANDEY", "NIRAJ KAUSHIK", "VENUGOPAL", "SUSHMITA", "SHREESHA G K", "ADARSH KUMAR", "SAHANA HEGDE", "PRASHANTH M"],
             "rules": [
@@ -613,7 +654,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "TECH CHARADES": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "3:00pm-4:00pm",
             "coordinators": ["ABHIGYAN PANDEY", "NIRAJ KAUSHIK", "KUSHAL JHA", "SIDHARTH KUMAR"],
             "rules": [
@@ -625,7 +666,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "C PROGRAMMING (P)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "5:30pm-6:30pm",
             "coordinators": ["SIDHARTH KUMAR", "JEETENDRA", "SAUJANYA NAGPAL", "KUSHAL JHA", "SHASHANK"],
             "rules": [
@@ -638,7 +679,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "C PROGRAMMING (F)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "12:00pm-1:00pm",
             "coordinators": ["SIDHARTH KUMAR", "JEETENDRA", "SAUJANYA NAGPAL", "KUSHAL JHA", "SHASHANK"],
             "rules": [
@@ -651,9 +692,9 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "SPELL BEE": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "5:30pm-6:00pm",
-            "coordinators": ["SIDHARTH KUMAR", "JEETENDRA", "SAUJANYA NAGPAL", "KUSHAL JHA", "SHASHANK"],
+            "coordinators": ["KRITIKA SHARMA", "RIMIL DEY", "OSHIN", "RASHMI", "ABHISHEK SINGH"],
             "rules": [
                 "UNLIMITED ENTRIES PER TEAM.",
                 "USE OF MOBILE PHONES AND ELECTRONIC GADGETS IS STRICTLY PROHIBITED.",
@@ -661,7 +702,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "MOCK PLACEMENT (P)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "3:30pm-4:30pm",
             "coordinators": ["NIKHIL KUMAR", "HARSH DEORA", "ABHISHEK SINGH"],
             "rules": [
@@ -677,7 +718,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "MOCK PLACEMENT (2nd)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "5:00pm-6:00pm",
             "coordinators": ["NIKHIL KUMAR", "HARSH DEORA", "ABHISHEK SINGH"],
             "rules": [
@@ -693,7 +734,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "MOCK PLACEMENT (F)": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "12:00pm-1:00pm",
             "coordinators": ["NIKHIL KUMAR", "HARSH DEORA", "ABHISHEK SINGH"],
             "rules": [
@@ -709,7 +750,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "CREATIVE WRITING": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "5:00pm-6:30pm",
             "coordinators": ["ANANYA SINGH", "AISHWARYA JAIN", "SHWETHA CP"],
             "rules": [
@@ -722,7 +763,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "PERCEPTION WRITING": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "5:00pm-6:30pm",
             "coordinators": ["PRAVEEN GOPALI", "PRIYANKA GIRI", "ADARSH KUMAR", "SIRISHA"],
             "rules": [
@@ -735,7 +776,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "ESSAY WRITING": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "4:00pm-5:30pm",
             "coordinators": ["VISHWAS", "ADARSH KUMAR", "SIRISHA", "ARAVIND BHAT"],
             "rules": [
@@ -748,7 +789,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "LOVE LETTER WRITING": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "4:00pm-5:30pm",
             "coordinators": ["SHAHIDA", "TRIPTI MISHRA", "ANUKRITI SHARMA", "SAUJANYA NAGPAL", "GAGANDEEP"],
             "rules": [
@@ -760,7 +801,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "HATE LETTER": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "4:00pm-4:30pm",
             "coordinators": ["DEEKSHITA", "OSHIN SRIVASTAVA", "ABHISHEK SINGH", "PRAYASHI", "NISHITA PAL", "KUSHAL JHA"],
             "rules": [
@@ -773,7 +814,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "HORROR STORY WRITING": {
-            "venue": "xyz",
+            "venue": "ADMIN BLOCK",
             "timings": "5:00pm-6:30pm",
             "coordinators": ["LAVANYA N GOWDA", "SHARMISTHA", "PRAVEEN GOPALI", "GAURAV KUMAR", "SATISH KUMAR"],
             "rules": [
@@ -786,7 +827,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "ATHLETICS": {
-            "venue": "xyz",
+            "venue": "MAIN GROUND",
             "timings": "4:00pm-6:00pm",
             "coordinators": ["SHASHANK K", "ASHISH RANJAN", "PRAJWAL DESAI", "SHREEDHAR M"],
             "rules": [
@@ -800,7 +841,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "TABLE TENNIS": {
-            "venue": "xyz",
+            "venue": "TT ROOM",
             "timings": "4:00pm-6:00pm",
             "coordinators": ["AKSHAY HULEKAL", "ABHISHEK S K", "VEEKSHITA", "SANGAMESH PATIL", "ANUP HEGDE", "BHARATESH BHAT"],
             "rules": [
@@ -813,7 +854,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "VOLLEY BALL (P)": {
-            "venue": "xyz",
+            "venue": "TEMPLE GROUND",
             "timings": "5:45am-8:00am",
             "coordinators": ["PRAVEEN M", "NAVEEN NAIK", "RAJU", "SANDEEP KUMAR", "CHETAN G S"],
             "rules": [
@@ -824,7 +865,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "VOLLEY BALL (F)": {
-            "venue": "xyz",
+            "venue": "TEMPLE GROUND",
             "timings": "4:00pm-6:00pm",
             "coordinators": ["PRAVEEN M", "NAVEEN NAIK", "RAJU", "SANDEEP KUMAR", "CHETAN G S"],
             "rules": [
@@ -835,7 +876,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "THROW BALL": {
-            "venue": "xyz",
+            "venue": "FOOTBALL GROUND",
             "timings": "4:00pm-6:00pm",
             "coordinators": ["NISCHITH", "NAVEEN NAIK", "KAVYA P D", "ANIL KUMAR G", "SHREYA WALI", "CHETAN G S"],
             "rules": [
@@ -846,7 +887,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "SHOTPUT": {
-            "venue": "xyz",
+            "venue": "CONTACT CO-ORDINATORS",
             "timings": "4:00pm-6:00pm",
             "coordinators": ["SHIVSHARAN M", "KAVYA P D", " LUCKY", "GAGANDEEP"],
             "rules": [
@@ -856,7 +897,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "TUG OF WAR": {
-            "venue": "xyz",
+            "venue": "MAIN GROUND",
             "timings": "4:00pm-6:00pm",
             "coordinators": ["SUMANTH KUMAR", "RANJITH", "BIDYANSHU", "PRAVEEN M", "GAURAV KUMAR"],
             "rules": [
@@ -866,7 +907,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "BADMINTON (P)": {
-            "venue": "xyz",
+            "venue": "MECH BLOCK",
             "timings": "5:45am - 8:00am",
             "coordinators": ["C K KEERTHI", "PRAVEEN M", "CHETAN SM", "SANGAMESH SH", "SATYAM", "SHARVANI"],
             "rules": [
@@ -877,7 +918,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "BADMINTON (F)": {
-            "venue": "xyz",
+            "venue": "MECH BLOCK",
             "timings": "5:45am - 8:00am",
             "coordinators": ["C K KEERTHI", "PRAVEEN M", "CHETAN SM", "SANGAMESH SH", "SATYAM", "SHARVANI"],
             "rules": [
@@ -888,7 +929,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "KHO-KHO (P)": {
-            "venue": "xyz",
+            "venue": "MAIN GROUND",
             "timings": "5:45am - 8:00am",
             "coordinators": ["SANGMESH BHINGI", "AMIT KOMPI", "SANDESH KEGI", "SACHIN PATTAR", "SHREEDHAR MARATHE"],
             "rules": [
@@ -902,7 +943,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "KHO-KHO (F)": {
-            "venue": "xyz",
+            "venue": "MAIN GROUND",
             "timings": "5:45am - 8:00am",
             "coordinators": ["SANGMESH BHINGI", "AMIT KOMPI", "SANDESH KEGI", "SACHIN PATTAR", "SHREEDHAR MARATHE"],
             "rules": [
@@ -916,7 +957,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "CRICKET (P)": {
-            "venue": "xyz",
+            "venue": "CONTACT CO-ORDINATORS",
             "timings": "8:00am - 3:30pm",
             "coordinators": ["ASHISH RANJAN", "NISCHITH", "RAJU", "SHUBHAM ANAND", "SHREYA WALI", "SIDDANT", "KAVYA MOHAN", "SHREEDHAR PATIL"],
             "rules": [
@@ -935,7 +976,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "CRICKET (F)": {
-            "venue": "xyz",
+            "venue": "CONTACT CO-ORDINATORS",
             "timings": "8:00am - 11:00pm",
             "coordinators": ["ASHISH RANJAN", "NISCHITH", "RAJU", "SHUBHAM ANAND", "SHREYA WALI", "SIDDANT", "KAVYA MOHAN", "SHREEDHAR PATIL"],
             "rules": [
@@ -954,7 +995,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "MARATHON": {
-            "venue": "xyz",
+            "venue": "COLLEGE PREMISES",
             "timings": "5:45am - 8:00am",
             "coordinators": ["SHREEDHAR MARATHE", "RANJITH", "SAUJANYA NAGPAL", "VIKRAM MANDAL", "PRAJWAL DESAI"],
             "rules": [
@@ -962,7 +1003,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "FOOTBALL (P)": {
-            "venue": "xyz",
+            "venue": "FOOTBALL GROUND",
             "timings": "5:45am - 8:00am",
             "coordinators": ["SHREEDHAR MARATHE", "TANMAYE SETHI", "SIDHARTH KUMAR", "PRAJWAL DESAI", "MANJUNATH CHAVHAN", "DEEPAK ULLAGADDI"],
             "rules": [
@@ -975,7 +1016,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "FOOTBALL (F)": {
-            "venue": "xyz",
+            "venue": "FOOTBALL GROUND",
             "timings": "5:45am - 8:00am",
             "coordinators": ["SHREEDHAR MARATHE", "TANMAYE SETHI", "SIDHARTH KUMAR", "PRAJWAL DESAI", "MANJUNATH CHAVHAN", "DEEPAK ULLAGADDI"],
             "rules": [
@@ -988,7 +1029,7 @@ app.controller("eventCtrl", function($scope) {
             ]
         },
         "BASKETBALL (P)": {
-            "venue": "xyz",
+            "venue": "BASKETBALL COURT",
             "timings": "6:00pm - 9:30pm",
             "coordinators": ["RISHAB NARAYAN", "VIKRAM MANDAL", "LUCKY", "ADARSH KUMAR", "PRAVEEN M"],
             "rules": [
@@ -996,14 +1037,13 @@ app.controller("eventCtrl", function($scope) {
                 "PRELIMS: BOYS: 7 MINS PER SET (4 SETS).",
                 "GIRLS: 5 MINS PER SET (4 SETS).",
                 "FINALS: BOYS: 10 MINS PER SET (4 SETS)",
-                "GIRLS: 5 MINS PER SET (4 SETS).",
                 "1 PLAYER COMPULSORY FROM 1ST YEAR.",
                 "NO EXPLICIT/VULGAR WORDS ARE ENTERTAINED.",
                 "UMPIRES DECISION IS FINAL."
             ]
         },
         "BASKETBALL (F)": {
-            "venue": "xyz",
+            "venue": "BASKETBALL COURT",
             "timings": "5:30pm - 7:00pm",
             "coordinators": ["RISHAB NARAYAN", "VIKRAM MANDAL", "LUCKY", "ADARSH KUMAR", "PRAVEEN M"],
             "rules": [
@@ -1049,4 +1089,11 @@ app.controller("resultsCtrl", function($scope, $http) {
             });
     };
 
-})
+});
+
+app.controller("aboutCtrl",function($scope){
+		$scope.goto=function(url)
+		{
+				window.open(url,'_system');
+		}
+});

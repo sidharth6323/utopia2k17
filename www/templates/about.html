@@ -1,0 +1,57 @@
+<ion-view title="days" ng-controller="aboutCtrl">
+    <div class="topbar">
+        <h3> Utopia '17 </h3>
+    </div>
+    <div class="eventday"><span>
+    <i class="icon ion-person"></i> 
+        <span>About</span></span>
+    </div>
+    <ion-content class="has-header">
+        <div class="aboutwrapper">
+            <div class="card">
+                <div class="item item-divider">
+                    <i class="icon ion-wand"></i> About Utopia
+                </div>
+                <div class="item item-text-wrap">
+                    UTOPIA, the annual hostel fest of RNS Institute of Technology.This fest is organised by the 3rd year students and rest of the hostelites are divided into four different teams and compete among themselves to win the battle.
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item item-divider">
+                    <i class="icon ion-person-stalker"></i> Teams
+                </div>
+                <a class="item item-icon-left">
+                    <i class="icon ion-ios-arrow-forward"></i> Incredible Injuns
+                </a>
+                <a class="item item-icon-left">
+                    <i class="icon ion-ios-arrow-forward"></i> Head Hunters
+                </a>
+                <a class="item item-icon-left">
+                    <i class="icon ion-ios-arrow-forward"></i> Mighty Monsters
+                </a>
+                <a class="item item-icon-left">
+                    <i class="icon ion-ios-arrow-forward"></i> Victorious Vixens
+                </a>
+            </div>
+            <div class="card">
+                <div class="item item-divider">
+                    <i class="icon ion-android-happy"></i> Developer
+                </div>
+                <div class="item item-text-wrap">
+                    <img class="devimg" src="img/dev.jpg" width="40%" height="10%">
+                    <div class="devdetails">
+                        <span>Sidharth Kumar</span>
+                        <br>
+                        <a  ng-click="goto('https://www.facebook.com/sidharth.kumar.98031')">
+                            <i class="icon ion-social-facebook"></i></a>
+                        <a ng-click="goto('https://www.linkedin.com/in/sidharth-kumar-87b027102/')">
+                            <i class="icon ion-social-linkedin"></i></a>
+                        <a ng-click=goto('https://www.github.com/sidharth6323')>
+                            <i class="icon ion-social-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

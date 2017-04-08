@@ -19,6 +19,7 @@ app.run(function($ionicPlatform,$ImageCacheFactory) {
     setTimeout(function() {
         navigator.splashscreen.hide();
     }, 300);
+    window.localStorage.clear();
     console.log("cleared");
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -57,6 +58,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('results', {
             url: '/results',
             templateUrl: 'templates/results.html'
+        })
+        .state('about', {
+            url: '/about',
+            templateUrl: 'templates/about.html'
         })
       $urlRouterProvider.otherwise('/');
 })
