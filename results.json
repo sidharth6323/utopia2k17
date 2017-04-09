@@ -3,7 +3,6 @@
 	"BASKETBALL (B) (P)":"II, MM",
 	"RUBICS CUBE (1ST)": "LIKHIT(II)",
 	"RUBICS CUBE (2ND)": "HARSHA(HH)",
-	"RUBICS CUBE (3RD)": "MAHESH(HH),\nSHRESHNA(HH)",
 	"SUDOKU (1ST)"		:	"GOWTHAM(MM)",
 	"SUDOKU (2ND)"		:	"ADITYA (VV)",
 	"ESSAY (E)(1ST)"		:	"PRANAV (MM)",
@@ -23,6 +22,7 @@
 	"RANGOLI (B) (2ND)"		:	"MANI (HH)",
 	"RANGOLI (G) (1ST)"		:	"MANOGHNA (MM)",
 	"RANGOLI (G) (2ND)"		:	"GANGA (MM)"
+
 
 
 }
